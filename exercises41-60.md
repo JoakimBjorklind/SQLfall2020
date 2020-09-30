@@ -1,0 +1,21 @@
+41. SELECT name,price*2 FROM Products;
+42. SELECT name,price FROM Products WHERE price % 2 = 0;
+43. SELECT word,LENGTH(word) FROM Words;
+44. SELECT word FROM Words WHERE LENGTH(word) < 6;
+45. SELECT word FROM Words ORDER BY LENGTH(word), word;
+46. SELECT (forename || ' ' || surname) FROM Users;
+47. SELECT SUM(LENGTH(word)) FROM Words;
+48. SELECT product, price*amount FROM Orders;
+49. SELECT SUM(price*amount) FROM Orders;
+50. SELECT name FROM Movies WHERE (year % 4 = 0 AND year % 100 <> 0) OR year % 400 = 0;
+51. SELECT name FROM Products WHERE price = ( SELECT MIN(price) FROM Products);
+52. SELECT name FROM Products WHERE price <= 2*(SELECT MIN(price) FROM Products);
+53. SELECT name FROM Products WHERE price IN (SELECT price FROM Products) GROUP BY price
+HAVING COUNT(price) = 1;
+54. SELECT word FROM Words ORDER BY word LIMIT 1;
+55. SELECT word FROM Words ORDER BY word LIMIT 1 OFFSET 1;
+56. SELECT word FROM Words ORDER BY word LIMIT -1 OFFSET 1;
+57. SELECT word FROM Words WHERE word LIKE '%i%';
+58. SELECT word FROM Words WHERE word LIKE 'a%';
+59. SELECT word FROM Words WHERE word LIKE '_p___';
+60. SELECT word FROM Words WHERE word LIKE '%a%a%' AND word NOT LIKE '%a%a%a%';
